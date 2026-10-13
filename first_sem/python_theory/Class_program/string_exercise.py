@@ -12,7 +12,7 @@
 # ==============================
 
 raw_data = """
-   naveen  KUMAR
+naveen  KUMAR
 naveen.kumar@COMPANY.com
 +91-98765-43210
 """
@@ -22,19 +22,24 @@ print('PROFILE CARD')
 print('============================')
 
 name,email,phone=raw_data.split("\n")[1],raw_data.split("\n")[2],raw_data.split("\n")[3]
-print('Name     :',name.strip().title())
 first,last=name.split()[0],name.split()[1]
 initials=first[0].upper()+last[0].upper()
-print('Intitials:',initials)
-print('Email    :',email.lower())
-
+domain=email.lower().split("@")[1]
 phone_no = phone.replace("-","")
 masked_phone="*" * (len(phone_no)-4) + phone_no[-4:]
-print('Phone    :',masked_phone)
+
 valid="@" in email and len(phone)>=10
-print('Valid    :',valid)
+print('============================')
+print('PROFILE CARD')
 print('============================')
 
+print('Name     :',name.strip().title())
+print('Intitials:',initials)
+print('Email    :',email.lower())
+print('Domain   :',domain)
+print('Phone    :',masked_phone)
+print('Valid    :',valid)
+print('============================')
 
 
 

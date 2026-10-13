@@ -1,9 +1,10 @@
-sum=0
+sum=0                                           #how to calculate sum without using building  methods
 my_mark=[]
 for number in range(5):
     Newmark=int(input("Enter your  Subject Mark:"))
     my_mark.append(Newmark)
 for i in range(len(my_mark)):
     sum+=my_mark[i]
-print("total sum",sum)
+print("total sum:",sum)
+
     
